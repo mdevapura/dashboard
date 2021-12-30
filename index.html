@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="theme-light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,7 +10,7 @@
   <title>Social Media Dashboard</title>
 </head>
 <body>
-
+  <div class="container">
   <header>
 
     <div>
@@ -20,8 +20,8 @@
 
     <div>
       <h4>Dark Mode</h4>
-    <label class="switch">
-      <input type="checkbox">
+    <label id="switch" class="switch">
+      <input type="checkbox" onchange="toggleTheme()" id="slider">
       <span class="slider round"></span>
     </label>
     </div>
@@ -30,39 +30,39 @@
 
   <div class="top">
   <div id="facebook" class="square">
-    <img src="images/icon-facebook.svg" alt="facebook icon">
-    @rajmaliwalas
+    <img src="images/icon-facebook.svg" alt="facebook icon" class="icon">
+    <h2>@rajmaliwalas</h2>
     <h1>1987</h1>
-    Followers
+    <h3>Followers</h3>
     <img src="images/icon-up.svg" alt="up arrow">
-    12 Today
+    <h4 style="color: green"> 12 Today </h4>
   </div>
 
   <div id="twitter" class="square">
-    <img src="images/icon-twitter.svg" alt="twitter icon">
-    @rajma
+    <img src="images/icon-twitter.svg" class="icon" alt="twitter icon">
+    <h2>@rajma</h2>
     <h1>1044</h1>
-    Followers
+    <h3>Followers</h3>
     <img src="images/icon-up.svg" alt="up arrow">
-    99 Today
+    <h4 style="color: green">99 Today</h4>
   </div>
 
   <div id="instagram" class="square">
-    <img src="images/icon-instagram.svg" alt="instagram icon">
-    @rajm.py
+    <img src="images/icon-instagram.svg" class="icon" alt="instagram icon">
+    <h2>@rajm.py</h2>
     <h1>11k</h1>
-    Followers
+    <h3>Followers</h3>
     <img src="images/icon-up.svg" alt="up arrow">
-    1099 Today
+    <h4 style="color: green">1099 Today</h4>
   </div>
 
   <div id="youtube" class="square">
-    <img src="images/icon-youtube.svg" alt="youtube icon">
-    Rajm A.
+    <img src="images/icon-youtube.svg" class="icon" alt="youtube icon">
+    <h2>Rajm A. </h2>
     <h1>8239</h1>
-    Subscribers
+    <h3>Subscribers</h3>
     <img src="images/icon-down.svg" alt="down arrow">
-    144 Today
+    <h4 style="color: red">144 Today</h4>
   </div>
 
   </div>
@@ -74,60 +74,90 @@
   <div class="bottom">
   <div class="rectangle">
     <h4>Page Views</h4>
-    87
+    <h3>87</h3>
     <img src="images/icon-up.svg" alt="up arrow">
-    3%
+    <h4 style="color: green">3%</h4>
   </div>
 
   <div class="rectangle">
     <h4>Likes</h4>
-    52
+    <h3>52</h3>
     <img src="images/icon-down.svg" alt="down arrow">
-    2%
+    <h4 style="color: red">2%</h4>
   </div>
 
   <div class="rectangle">
     <h4>Likes</h4>
-    5462
+    <h3>5462</h3>
     <img src="images/icon-up.svg" alt="up arrow">
-    2257%
+    <h4 style="color: green">2257%</h4>
   </div>
 
   <div class="rectangle">
     <h4>Profile Views</h4>
-    52k
+    <h3>52k</h3>
     <img src="images/icon-up.svg" alt="up arrow">
-    1375%
+    <h4 style="color: green">1375%</h4>
   </div>
 
   <div class="rectangle">
     <h4>Retweets</h4>
-    117
+    <h3>117</h3>
     <img src="images/icon-up.svg" alt="up arrow">
-    303%
+    <h4 style="color: green">303%</h4>
   </div>
 
   <div class="rectangle">
     <h4>Likes</h4>
-    507
+    <h3>507</h3>
     <img src="images/icon-up.svg" alt="up arrow">
-    553%
+    <h4 style="color: green">553%</h4>
   </div>
 
   <div class="rectangle">
     <h4>Likes</h4>
-    107
+    <h3>107</h3>
     <img src="images/icon-down.svg" alt="down arrow">
-    19%
+    <h4 style="color: red">19%</h4>
   </div>
 
   <div class="rectangle">
     <h4>Total Views</h4>
-    1407
+    <h3>1407</h3>
     <img src="images/icon-down.svg" alt="down arrow">
-    12%
+    <h4 style="color: red">12%</h4>
   </div>
   </div>
 
+
+  <script>
+    // function to set a given theme/color-scheme
+    function setTheme(themeName) {
+      localStorage.setItem('theme', themeName);
+      document.documentElement.className = themeName;
+    }
+    // function to toggle between light and dark theme
+    function toggleTheme() {
+      if (localStorage.getItem('theme') === 'theme-dark'){
+        setTheme('theme-light');
+      } else {
+        setTheme('theme-dark');
+      }
+    }
+    // Immediately invoked function to set the theme on initial load
+    (function () {
+      if (localStorage.getItem('theme') === 'theme-dark') {
+        setTheme('theme-dark');
+      } else {
+        setTheme('theme-light');
+      }
+    })();
+
+  </script>
+
+  </div>
+
 </body>
+
+
 </html>
