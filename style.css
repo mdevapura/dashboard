@@ -24,7 +24,6 @@ h2 {
 
 h1 {
     color: var(--font-color);
-    position: relative;
     left: 30px;
 }
 
@@ -42,8 +41,8 @@ img {
 .switch {
     position: relative;
     display: inline-block;
-    width: 10px;
-    height: 20px;
+    width: 45px;
+    height: 25px;
 }
 
 .switch input {
@@ -70,7 +69,7 @@ img {
     height: 20px;
     width: 20px;
     left: 4px;
-    bottom: 4px;
+    bottom: 3px;
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
@@ -85,9 +84,9 @@ input:focus + .slider {
 }
 
 input:checked + .slider:before {
-    -webkit-transform: translateX(40px);
-    -ms-transform: translateX(40px);
-    transform: translateX(40px);
+    -webkit-transform: translateX(20px);
+    -ms-transform: translateX(20px);
+    transform: translateX(20px);
 }
 
 .slider.round {
@@ -119,13 +118,13 @@ input:checked + .slider:before {
     }
 }
 
-@media (max-width: 599px) {
+@media (max-width: 450px) {
 
     .top {
         display: grid;
         grid-template-columns: 1fr;
-
-
+        grid-template-rows: 1fr;
+        grid-column-gap: 10px;
     }
 
 }
@@ -136,6 +135,7 @@ input:checked + .slider:before {
 
 header {
     display: flex;
+    justify-content: space-around;
 }
 
 .square {
@@ -143,6 +143,8 @@ header {
     background: var(--color-background);
     height: 250px;
     width: 250px;
+    margin-top:70px;
+    margin-left: 50px;
     border-width: 5px;
     border-style: solid;
     border-bottom: 0;
@@ -151,8 +153,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
-    margin: 40px auto auto;
+    align-items: center;
     padding: 10px;
 }
 
@@ -165,9 +166,11 @@ header {
 
     padding: 10px;
     margin-top: 40px;
+    margin-left: 50px;
     margin-bottom: 30px;
     display: flex;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -194,7 +197,7 @@ header {
 
 .theme-light {
     --color-primary: #0060df;
-    --color-secondary: #fbfbfe;
+    --color-secondary: hsl(0, 0%, 100%);
     --color-accent: #fd6f53;
     --font-color: #000000;
     --color-background: hsl(227, 47%, 96%);
@@ -214,7 +217,5 @@ header {
     padding-left: 30px;
     padding-right: 30px;
     padding-top: 10px;
-
-
 
 }
